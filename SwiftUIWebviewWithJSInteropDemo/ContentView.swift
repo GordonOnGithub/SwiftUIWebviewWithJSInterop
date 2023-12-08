@@ -6,6 +6,6 @@ struct ContentView: View {
   let viewModel = ContentViewModel()
 
   var body: some View {
-    SwiftUIWithJSInteropWebView(viewModel: viewModel.buildSwiftUIWithJSInteropWebViewModel())
+      SwiftUIWithJSInteropWebView(viewModel: viewModel.buildSwiftUIWithJSInteropWebViewModel(), navigationDelegate: nil)
   }
 }
