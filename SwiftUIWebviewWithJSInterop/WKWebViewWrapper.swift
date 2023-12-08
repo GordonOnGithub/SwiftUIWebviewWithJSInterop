@@ -16,12 +16,14 @@ struct WKWebViewWrapper: UIViewRepresentable {
   var url: URL?
 
   let webViewConfiguration: WKWebViewConfiguration
+  
+    let navigationDelegate: WKNavigationDelegate?
 
   func makeUIView(context: Context) -> UIViewType {
 
     let webView = WKWebView(frame: .zero, configuration: webViewConfiguration)
 
-    webView.navigationDelegate = context.coordinator
+    webView.navigationDelegate = navigationDelegate
 
     return webView
   }
@@ -53,7 +55,7 @@ struct WKWebViewWrapper: UIViewRepresentable {
     Coordinator(self)
   }
 
-  class Coordinator: NSObject, WKNavigationDelegate {
+  class Coordinator: NSObject {
     var parent: WKWebViewWrapper
 
     init(_ parent: WKWebViewWrapper) {

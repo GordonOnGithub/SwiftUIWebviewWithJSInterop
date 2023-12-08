@@ -17,7 +17,7 @@ public struct SwiftUIWithJSInteropWebView: View {
 
     WKWebViewWrapper(
       script: $viewModel.script, url: $viewModel.url,
-      webViewConfiguration: viewModel.webViewConfiguration)
+      webViewConfiguration: viewModel.webViewConfiguration, navigationDelegate: nil)
   }
 
 }
